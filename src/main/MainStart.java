@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class MainStart {
-	//test git
+	//test git branch
 	//Global variables
 	private static GameStory game;
 
