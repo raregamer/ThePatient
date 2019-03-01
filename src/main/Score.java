@@ -2,25 +2,25 @@ package main;
 //Score class to be accessed globally to allow to keep track of score across all mini games. 
 public class Score {
 	
-	private static int score = 0;
+	private int score;
 	//Constructor is private and can't make new instances to be used anywhere. 
-	private Score() {
-		
-	}
+public Score () {
+	this.score = 0;
+}
 
-	public static int getScore() {
+	public  int getScore() {
 		return score;
 	}
 
-	public static void increaseScoreByOne() {
+	public  void increaseScoreByOne() {
 		score++;
 	}
 	
-	public static void decreaseScoreByOne() {
+	public  void decreaseScoreByOne() {
 		score--;
 	}
 	
-	public static void resetScore() {
+	public  void resetScore() {
 		score = 0;
 	}
 

@@ -9,34 +9,30 @@ public class Room {
 	//Choice (I.E. "Check it out" or "Ignore")
 	private Choice choice1;
 	private Choice choice2;
+	private Choice choice3;
 
 	
 
-//Constructor to set object. 
-public Room(String scenario, Choice choice1, Choice choice2) {
+//Constructor to set room variables.
+	
+	//2 choices constructor 
+	public Room(String scenario, Choice choice1, Choice choice2) {
+		
+		this.setTextScenario(scenario);
+		this.setChoice1(choice1);
+		this.setChoice2(choice2);
+	}
+	
+	//3 choices constructor
+public Room(String scenario, Choice choice1, Choice choice2,Choice choice3) {
 	
 	this.setTextScenario(scenario);
 	this.setChoice1(choice1);
 	this.setChoice2(choice2);
-	
-	
-}
-
-//trying to figure out how to structure mini games and call them in a constructor. 
-//Constructor to set object. 
-public Room(String scenario,AnagramMiniGame game) {
-	this.setTextScenario(scenario);
-	//game happening
-	;
-	//start game
-	game.startAnagramGame();
-	
+	this.setChoice3(choice3);
 	
 }
 
-public void loadMiniGame(MiniGame game) {
-	game.getAnigramGame();
-}
 
 
 
@@ -68,6 +64,20 @@ public Choice getChoice2() {
 
 public void setChoice2(Choice choice2) {
 	this.choice2 = choice2;
+}
+
+
+
+
+public Choice getChoice3() {
+	return choice3;
+}
+
+
+
+
+public void setChoice3(Choice choice3) {
+	this.choice3 = choice3;
 }	
 
 
