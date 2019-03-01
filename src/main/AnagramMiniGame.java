@@ -2,15 +2,21 @@ package main;
 
 import java.util.Scanner;
 
-public class AnagramMiniGame {
+public class AnagramMiniGame implements Games {
 //Anagram variables
 	private String anagram;
 	private String anagramAnswer;
+	private int playerHealth;
+ 	
+public AnagramMiniGame(int playerHealth) {
+	this.playerHealth = playerHealth;
+}
 	
 	
 //Method to start anagram game. 
-	public void startAnagramGame() {
+	public int startGame(int playerHealth) {
 		//Scanner for input.
+		System.out.println("That is an interesting choice, can you take a look at this and try to solve it?");
 		Scanner s = new Scanner(System.in);
 		anagram = "odwr";
 		anagramAnswer = "word";
@@ -18,16 +24,15 @@ public class AnagramMiniGame {
 		
 		String playersGuess = s.next();
 		if(checkAnswer(playersGuess,anagramAnswer)) {
-			 System.out.println("correct");
-			 Score.increaseScoreByOne();
+			 System.out.println("Very good");
+			 playerHealth++;
 			 
 		}else {
-			System.out.println("wrong");
-			Score.decreaseScoreByOne();
+			System.out.println("Hmm...we will need to work on that");
+			playerHealth--;
 		}
-		System.out.println(playersGuess + " " + anagramAnswer);
 		
-		
+		return playerHealth;
 		
 	}
 	
