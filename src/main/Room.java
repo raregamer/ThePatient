@@ -1,4 +1,7 @@
 package main;
+
+import java.util.ArrayList;
+
 /*This class allows to create a room page, and make a scenario with player choices.
  * */
 
@@ -10,26 +13,40 @@ public class Room {
 	private Choice choice1;
 	private Choice choice2;
 	private Choice choice3;
-
+	//A possible way to make choices in a ArrayList to have it be more dynamic.
+	private ArrayList<Choice> choices = new ArrayList<Choice>();
+	private boolean isTextScenarioOnly = false;
+	private int roomHomeNumber;
+	private int howManyChoices;
 	
 
 //Constructor to set room variables.
-	
-	//2 choices constructor 
+	//Constructor to just have a scenario NO choices.
+	public Room(String scenario, int roomNumberToGoBackTo) {
+		this.setTextScenario(scenario);
+		setTextScenarioOnly(true);
+		this.setRoomHomeNumber(roomNumberToGoBackTo);
+	}
+
+	//Constructor that allows for 2 choices. 
+	//Not working yet.
 	public Room(String scenario, Choice choice1, Choice choice2) {
 		
 		this.setTextScenario(scenario);
 		this.setChoice1(choice1);
 		this.setChoice2(choice2);
+		this.setHowManyChoices(2);
 	}
 	
-	//3 choices constructor
-public Room(String scenario, Choice choice1, Choice choice2,Choice choice3) {
 	
-	this.setTextScenario(scenario);
-	this.setChoice1(choice1);
-	this.setChoice2(choice2);
-	this.setChoice3(choice3);
+	//Constructor that allows for 3 choices.
+	public Room(String scenario, Choice choice1, Choice choice2,Choice choice3) {
+	
+		this.setTextScenario(scenario);
+		this.setChoice1(choice1);
+		this.setChoice2(choice2);
+		this.setChoice3(choice3);
+		this.setHowManyChoices(3);
 	
 }
 
@@ -37,6 +54,34 @@ public Room(String scenario, Choice choice1, Choice choice2,Choice choice3) {
 
 
 //Create getters and setters. 
+
+
+
+public int getHowManyChoices() {
+	return howManyChoices;
+}
+
+public void setHowManyChoices(int howManyChoices) {
+	this.howManyChoices = howManyChoices;
+}
+
+public int getRoomHomeNumber() {
+	return roomHomeNumber;
+}
+
+public void setRoomHomeNumber(int roomHomeNumber) {
+	this.roomHomeNumber = roomHomeNumber;
+}
+
+public boolean isTextScenarioOnly() {
+	return isTextScenarioOnly;
+}
+
+public void setTextScenarioOnly(boolean isTextScenarioOnly) {
+	this.isTextScenarioOnly = isTextScenarioOnly;
+}
+
+
 public String getTextScenario() {
 	return textScenario;
 }
@@ -45,6 +90,7 @@ public String getTextScenario() {
 public void setTextScenario(String textScenario) {
 	this.textScenario = textScenario;
 }
+
 
 
 public Choice getChoice1() {
