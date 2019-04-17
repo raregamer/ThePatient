@@ -2,7 +2,7 @@ package main;
 
 import java.util.Scanner;
 
-//Updated 4.16.18 2
+//Updated 4.16.18
 
 public class Main {
 	public static Scanner input = new Scanner(System.in); 
