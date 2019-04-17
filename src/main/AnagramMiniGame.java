@@ -68,8 +68,11 @@ public class AnagramMiniGame implements Games {
 		for (int i = 0; i < wordSplit.length; i++) {
 			
 	        int randomIndex = (int)(Math.random() * wordSplit.length);
+	        //make a temp of the value so we can switch it with the random letters
 	        char temp = wordSplit[i];
+	        //put value of random index into the loop index 
 	        wordSplit[i] = wordSplit[randomIndex];
+	        //now put the temp into the random index spot.
 	        wordSplit[randomIndex] = temp;
 		}
 		
