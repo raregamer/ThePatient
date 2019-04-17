@@ -21,15 +21,15 @@ public GameStory(Player player) {
 	new Choice("Explore Outside", 2,0),
 	new Choice ("Leave", 0,0));
 	
-	rooms[0][1] = new Room("Welcome please take a seat.[0][1]",// internal choices should be a new action class that calls games and item.
-			new Choice("playGame",new AnagramMiniGame(player.getmHealth())),
-			new Choice("Go Back",0,0),
-			new Choice ("Leave", 0,0));
-	
-	rooms[0][2]= new Room("Outside[0][2]",// internal choices should be a new action class that calls games and item.
-			new Choice("pickFlower",2,0),
-			new Choice("Go Back",0,1),
-			new Choice ("Leave", 0,0));
+//	rooms[0][1] = new Room("Welcome please take a seat.[0][1]",// internal choices should be a new action class that calls games and item.
+//			new Choice("playGame",new AnagramMiniGame(player.getmHealth())),
+//			new Choice("Go Back",0,0),
+//			new Choice ("Go Back", 0,0));
+//	
+//	rooms[0][2]= new Room("Outside[0][2]",// internal choices should be a new action class that calls games and item.
+//			new Choice("pickFlower",2,0),
+//			new Choice("Go Back",0,1),
+//			new Choice ("Leave", 0,0));
 	
 	rooms[1][0] = new Room("[1][0]Dr: Welcome " + player.getmName() + " please take a seat", 
 			new Choice ("sit", 1,1),
@@ -38,12 +38,11 @@ public GameStory(Player player) {
 	
 	rooms[1][1] = new Room("Thank you, lets continue. "
 			+ "\nWhat do you want to work on?", 
-			new Choice("playGame",new AnagramMiniGame(player.getmHealth())),
+			new Choice("What are you thinking(Anagram Game)",new AnagramMiniGame(player.getmHealth())),
 			new Choice("Go Back",1,0),
 			new Choice ("Leave", 0,0));
 	
-//	rooms[1][2] = new Room("It was passed along to me, when you signed in. \nLets continue.",0); 
-	
+	/*Room 1 scenario */
 	rooms[1][2] = new Room("It was passed along to me, when you signed in. \nLets continue.", 
 			new Choice("Continue", 1,1), 
 			new Choice("Does that information always get \"passed to you?\"",1,3),
@@ -55,7 +54,7 @@ public GameStory(Player player) {
 			new Choice ("Leave", 0,0)); 
 	
 	rooms[1][4] = new Room("All your information is private in our current session. "
-			+ "Although your name is public information we shared with our office assistants.", 
+			+ "Although your name is public information we share with our office assistants.", 
 			new Choice("Thank You, for clarifying.", 1,1), 
 			new Choice("So it's not private, is it, is it, is it...",1,5),
 			new Choice ("Leave", 0,0)); 
@@ -63,6 +62,8 @@ public GameStory(Player player) {
 	rooms[1][5] = new Room("It seems you are having some paranoia tendicies.\nI perscribed some medication "
 			+ "to help out with that. Please see me again.",0);
 
+	
+	
 	
 	rooms[2][0] = new Room("[2][0]Outside. "
 			+ "\nWhat do you want to work on?", 

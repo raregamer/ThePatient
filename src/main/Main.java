@@ -62,15 +62,7 @@ public class Main {
 		
 	}
 	
-	public static void printLn(String printOutput){
-		System.out.println(printOutput);
-	}
-	
-	
-	public static void clearScannerLine() {
-		input.nextLine();
 
-	}
 	
 	//Go to room only allows to move to a room NO ACTIONS HAPPEN JUST MOVEMENT FROM ONE ROOM TO ANOTHER.
 	private static void loadRoom(Player player, int goToRoom, int subRoom) {
@@ -171,6 +163,16 @@ public class Main {
 		
 		}
 		
+	}
+	
+	public static void printLn(String printOutput){
+		System.out.println(printOutput);
+	}
+	
+	
+	public static void clearScannerLine() {
+		input.nextLine();
+
 	}
 	
 	private static void loadGame() {
