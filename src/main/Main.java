@@ -136,16 +136,25 @@ public class Main {
 					loadRoom(player1,goToRoom,subRoom);
 				}
 				
+				if(choice1.getHasPoints()) {
+					player1.setmHealth(player1.getmHealth() + choice1.getPoints());
+					System.out.println("in here");
+				}
+				
 				loadRoom(player1,choice1.getNextRoomPage(), choice1.getSubRoomPage());
 				 
 				break;
-			//case 2 allows for positive progress 
+				
 			case 2:
 				if(choice2.isAction()) {
 					Games game1 = choice2.getGame();
 					player1.setmHealth(game1.startGame(player1.getmHealth()));
 					//this will enter the room we are currently in.
 					loadRoom(player1,goToRoom,subRoom);
+				}
+				if(choice1.getHasPoints()) {
+					player1.setmHealth(player1.getmHealth() + choice1.getPoints());
+					System.out.println("in here");
 				}
 				loadRoom(player1,choice2.getNextRoomPage(), choice2.getSubRoomPage());
 				 
@@ -157,6 +166,10 @@ public class Main {
 					player1.setmHealth(game1.startGame(player1.getmHealth()));
 					//this will enter the room we are currently in.
 					loadRoom(player1,goToRoom,subRoom);
+				}
+				if(choice1.getHasPoints()) {
+					player1.setmHealth(player1.getmHealth() + choice1.getPoints());
+					System.out.println("in here");
 				}
 				loadRoom(player1,choice3.getNextRoomPage(), choice3.getSubRoomPage());
 				 

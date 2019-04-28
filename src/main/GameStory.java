@@ -39,7 +39,7 @@ public GameStory(Player player) {
 	rooms[1][1] = new Room("Thank you, lets continue. "
 			+ "\nWhat brings you in today?", 
 			new Choice("What are you thinking(Anagram Game)",new AnagramMiniGame(player.getmHealth())),
-			new Choice("Go Back",1,0),
+			new Choice("Last night I...",3,0),
 			new Choice ("Leave", 0,0));
 	
 	/*Room 1 scenario */
@@ -64,8 +64,50 @@ public GameStory(Player player) {
 	rooms[1][5] = new Room("It seems you are having some paranoia tendicies.\nI perscribed some medication "
 			+ "to help out with that. Please see me again.",0);
 	
-	//Room 1 scenario 2
-//	rooms[1][6] = new Room("")
+	//Room 1 scenario setups
+	rooms[3][0] = new Room("Yes...",
+			new Choice("Ended my relationship",4,0),
+			new Choice("Jumped out the window",5,0),
+			new Choice("Leave",0,0));
+	
+	//Ended Relationship scenario.
+	rooms[4][0] = new Room("Start from the beginning",
+			new Choice("We started the night with ice cream",4,1,5),
+			new Choice("I took her to my moms house",4,6,-10),
+			new Choice("Leave",0,0));
+	
+	rooms[4][1] = new Room("Yum...my favorite flavor is pistachio",
+			new Choice("Right..., as we are eating, she asks to share.",4,2),
+			new Choice("Moving on.., she trips.",4,3),
+			new Choice("Leave",0,0));
+	
+	rooms[4][2] = new Room("Sharing is caring",
+			new Choice("I don't share.",4,4, -10),
+			new Choice("I share",4,4,10),
+			new Choice("Leave",0,0));
+	
+	rooms[4][3] = new Room("Was she okay",
+			new Choice("Who cares",4,4, -20),
+			new Choice("Of course!, I help her up",4,4,20),
+			new Choice("Leave",0,0));
+	
+	rooms[4][4] = new Room("Hmm...How does she react?",
+			new Choice("Angry",4,5),
+			new Choice("Happy",4,6),
+			new Choice("Leave",0,0));
+	
+	rooms[4][5] = new Room("Rightfully so, wouldn't you say.",
+			new Choice("No, so I broke up with her.",4,7),
+			new Choice("She didn't have to break up with me.",4,8),
+			new Choice("Leave",0,0));
+	
+	rooms[4][7] = new Room("I see, based on my assesment you lack basic empathy, "
+			+ "I suggest my self help book to better yourself.",0);
+	
+	rooms[4][8] = new Room("People, don't have to do anything., "
+			+ "I suggest my self help book to better yourself.",0);
+	
+	
 
 	
 	

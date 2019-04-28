@@ -16,6 +16,7 @@ public class Choice {
 	private Games game; 
 	private boolean isAction; 
 	private boolean hasPoints;
+	private int points;
 	
 
 	//constructor for text and to next page
@@ -25,11 +26,14 @@ public class Choice {
 		this.setSubRoomPage(subRoomPage);
 	}
 	
-
+	//constructor to pass in points
 	public Choice(String choiceText, int nextRoomPage, int subRoomPage, int points) {
 		this.setChoiceText(choiceText);
 		this.setNextRoomPage(nextRoomPage);
 		this.setSubRoomPage(subRoomPage);
+		setHasPoints(true);
+		this.setPoints(points);
+		
 	}
 	
 	
@@ -78,6 +82,22 @@ public class Choice {
 	}
 	public void setChoiceText(String choiceText) {
 		this.choiceText = choiceText;
+	}
+
+	public boolean getHasPoints() {
+		return hasPoints;
+	}
+
+	public void setHasPoints(boolean hasPoints) {
+		this.hasPoints = hasPoints;
+	}
+
+	public int getPoints() {
+		return points;
+	}
+
+	public void setPoints(int points) {
+		this.points = points;
 	}
 
 }
