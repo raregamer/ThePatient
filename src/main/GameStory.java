@@ -73,7 +73,7 @@ public GameStory(Player player) {
 	//Ended Relationship scenario.
 	rooms[4][0] = new Room("Start from the beginning",
 			new Choice("We started the night with ice cream",4,1,5),
-			new Choice("I took her to my moms house",4,6,-10),
+			new Choice("I took her to my moms house",4,6,-100),
 			new Choice("Leave",0,0));
 	
 	rooms[4][1] = new Room("Yum...my favorite flavor is pistachio",
@@ -101,15 +101,56 @@ public GameStory(Player player) {
 			new Choice("She didn't have to break up with me.",4,8),
 			new Choice("Leave",0,0));
 	
+	rooms[4][6] = new Room("I am sorry you can't be helped",0);
+	
 	rooms[4][7] = new Room("I see, based on my assesment you lack basic empathy, "
-			+ "I suggest my self help book to better yourself.",0);
+			+ "\nI suggest my self help book to better yourself.\ncome visit again.",0);
 	
 	rooms[4][8] = new Room("People, don't have to do anything., "
-			+ "I suggest my self help book to better yourself.",0);
+			+ "\nI suggest my self help book to better yourself.\ncome visit again.",0);
 	
 	
 
+	//Jumped out of the window scenario
+	rooms[5][0] = new Room("Yet you live to speak another day.",
+			new Choice("What was that?",5,1),
+			new Choice("Laugh",5,2),
+			new Choice("Leave",0,0));
 	
+	rooms[5][1] = new Room("Never mind that. tell me more about this incident",
+			new Choice("As I stated, I jumped out the window",5,2,20),
+			new Choice("No!, I heard you.",6,0),
+			new Choice("Leave",0,0));
+	
+	rooms[5][2] = new Room("Okay tell me what triggered this episode",
+			new Choice("I tried to save my cat",5,3,10),
+			new Choice("I got paid ten dollars to do it",5,4,-10),
+			new Choice("Leave",0,0));
+	
+	rooms[5][3] = new Room("You do know cats have Nine lives.",
+			new Choice("I do now",5,5),
+			new Choice("Yes, that was his ninth",5,6,-10),
+			new Choice("Leave",0,0));
+	
+	rooms[5][5] = new Room("Glad to hear you learned a lesson. "
+					+ "Why not take a copy of my book for the bravery you displayed.",0);
+	rooms[5][6] = new Room("My condolences. "
+			+ "Please take a copy of my book to help you in your grieving.",0);
+	
+	
+	rooms[6][0] = new Room("My apologies, lets move on.",
+			new Choice("Move on",5,2),
+			new Choice("Move on...I'll move on",6,1),
+			new Choice("Leave",0,0));
+	
+	rooms[6][1] = new Room("Please bring yourself, to the peace inside.",
+			new Choice("Attack Doctor",6,2),
+			new Choice("Jump out the window",6,3),
+			new Choice("Maybe I am over reacting, lets gets back on track",5,2,50));
+	
+	rooms[6][2] = new Room("*SECURITY CALLED*.",0);
+	
+	rooms[6][3] = new Room("Wait you forgot my book...",0);
 	
 	
 	//Room 1 scenarios end
