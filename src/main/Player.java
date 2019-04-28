@@ -12,7 +12,7 @@ public class Player {
 	public Player(String name, char sex){
 		setmName(name);
 		setmSex(sex);
-		setmHealth(100);
+		setmHealth(40);
 	}
 	
 	//Getters and Setters

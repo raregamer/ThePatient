@@ -80,10 +80,15 @@ public class Main {
 		//The room numbers that is currently loaded and we are in (i.e. "0").
 //		int currentRoomNumber = goToRoom;
 		
-		if(player1.mHealth < 50) {
+		if(player1.mHealth < 20) {
 			System.out.println("Game Over");
 			menu();
 			
+		} 
+		
+		if(player1.mHealth >= 100) {
+			System.out.println("You have had a full recovery");
+			menu();
 		}
 
 		
@@ -134,7 +139,7 @@ public class Main {
 				loadRoom(player1,choice1.getNextRoomPage(), choice1.getSubRoomPage());
 				 
 				break;
-			
+			//case 2 allows for positive progress 
 			case 2:
 				if(choice2.isAction()) {
 					Games game1 = choice2.getGame();
@@ -142,11 +147,9 @@ public class Main {
 					//this will enter the room we are currently in.
 					loadRoom(player1,goToRoom,subRoom);
 				}
-			
 				loadRoom(player1,choice2.getNextRoomPage(), choice2.getSubRoomPage());
 				 
 				break;
-				
 				
 			case 3:
 				if(choice3.isAction()) {
@@ -155,7 +158,6 @@ public class Main {
 					//this will enter the room we are currently in.
 					loadRoom(player1,goToRoom,subRoom);
 				}
-			
 				loadRoom(player1,choice3.getNextRoomPage(), choice3.getSubRoomPage());
 				 
 				break;

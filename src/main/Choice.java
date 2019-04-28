@@ -9,10 +9,13 @@ public class Choice {
 	//what happens next based on this choice)
 	private int nextRoomPage;
 	private int subRoomPage;
+	//use to update player health based on good and bad choice
+	public int playersHealth;
 	
 	
 	private Games game; 
 	private boolean isAction; 
+	private boolean hasPoints;
 	
 
 	//constructor for text and to next page
@@ -21,6 +24,14 @@ public class Choice {
 		this.setNextRoomPage(nextRoomPage);
 		this.setSubRoomPage(subRoomPage);
 	}
+	
+
+	public Choice(String choiceText, int nextRoomPage, int subRoomPage, int points) {
+		this.setChoiceText(choiceText);
+		this.setNextRoomPage(nextRoomPage);
+		this.setSubRoomPage(subRoomPage);
+	}
+	
 	
 	//constructor to pass in game. 
 	public Choice(String choiceText, Games game) {

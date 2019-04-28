@@ -37,12 +37,14 @@ public GameStory(Player player) {
 			new Choice ("Leave", 0,0));
 	
 	rooms[1][1] = new Room("Thank you, lets continue. "
-			+ "\nWhat do you want to work on?", 
+			+ "\nWhat brings you in today?", 
 			new Choice("What are you thinking(Anagram Game)",new AnagramMiniGame(player.getmHealth())),
 			new Choice("Go Back",1,0),
 			new Choice ("Leave", 0,0));
 	
 	/*Room 1 scenario */
+	
+	//Room 1 scenario  1
 	rooms[1][2] = new Room("It was passed along to me, when you signed in. \nLets continue.", 
 			new Choice("Continue", 1,1), 
 			new Choice("Does that information always get \"passed to you?\"",1,3),
@@ -61,8 +63,14 @@ public GameStory(Player player) {
 	
 	rooms[1][5] = new Room("It seems you are having some paranoia tendicies.\nI perscribed some medication "
 			+ "to help out with that. Please see me again.",0);
+	
+	//Room 1 scenario 2
+//	rooms[1][6] = new Room("")
 
 	
+	
+	
+	//Room 1 scenarios end
 	
 	
 	rooms[2][0] = new Room("[2][0]Outside. "
@@ -71,7 +79,7 @@ public GameStory(Player player) {
 			new Choice("Go Back",0,0),
 			new Choice ("Leave", 0,0));
 	
-}
+	}
 
 //Getter and setter of player.
 public Player getPlayer() {
