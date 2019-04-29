@@ -38,9 +38,9 @@ public GameStory(Player player) {
 	
 	rooms[1][1] = new Room("Thank you, lets continue. "
 			+ "\nWhat brings you in today?", 
-			new Choice("What are you thinking(Anagram Game)",new AnagramMiniGame(player.getmHealth())),
+			new Choice("Assement",new AnagramMiniGame(player.getmHealth())),
 			new Choice("Last night I...",3,0),
-			new Choice ("Leave", 0,0));
+			new Choice ("Go Back", 1,0));
 	
 	/*Room 1 scenario */
 	
@@ -131,6 +131,7 @@ public GameStory(Player player) {
 			new Choice("I do now",5,5),
 			new Choice("Yes, that was his ninth",5,6,-10),
 			new Choice("Leave",0,0));
+	rooms[5][4] = new Room("Thats too bad, because this session was $150.",0);
 	
 	rooms[5][5] = new Room("Glad to hear you learned a lesson. "
 					+ "Why not take a copy of my book for the bravery you displayed.",0);
