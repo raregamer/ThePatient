@@ -13,6 +13,7 @@ public class FlowerGame implements Games {
 	 * return value and add to points.
 	 */
 
+	//Players health to be stored in.
 	private int playerHealth;
 
 	// Constructor
@@ -22,13 +23,14 @@ public class FlowerGame implements Games {
 
 	public int startGame(int playerHealth) {
 		Scanner input = new Scanner(System.in);
+		//Create flower and assign random values to each pedal.
 		Flower flower = new Flower();
-		flower.assignPedalValues();
-		int currentPedalValue = 0;
-
-		for (int i = 0; i < flower.pedals.length; i++) {
-			currentPedalValue = flower.pedals[i];
-			System.out.println("The pedal you have is worth " + currentPedalValue + " health points."
+		flower.assignPetalValues();
+		int currentPetalValue = 0;
+		//loop through all the petals and
+		for (int i = 0; i < flower.petals.length; i++) {
+			currentPetalValue = flower.petals[i];
+			System.out.println("The petal you have is worth " + currentPetalValue + " health points."
 					+ "\nWould you like to keep this pedal or pick a new one.");
 
 			int selection = 0;
@@ -57,12 +59,12 @@ public class FlowerGame implements Games {
 			}
 
 		}
-		System.out.println("Your current pedal is worth " + currentPedalValue);
-		if(currentPedalValue <= 0) {
+		System.out.println("Your current pedal is worth " + currentPetalValue);
+		if(currentPetalValue <= 0) {
 			System.out.println("Better luck next time.");
 		}
 		System.out.println("");
-		return playerHealth + currentPedalValue;
+		return playerHealth + currentPetalValue;
 
 	}
 

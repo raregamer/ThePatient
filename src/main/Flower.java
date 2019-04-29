@@ -2,23 +2,23 @@ package main;
 
 public class Flower {
 	
-	public int [] pedals;
+	public int [] petals;
 	
 	//Flower constructor.
 	public Flower() {
-		//set random amount of pedals each time.
-		this.pedals = new int[(int) (Math.random() * 6) + 1];
+		//set random amount of petals each time.
+		this.petals = new int[(int) (Math.random() * 6) + 1];
 	}
 	
 	
-	public void assignPedalValues() {
- 		for(int i = 0; i < this.getPedals().length; i++) {
- 			this.pedals[i] = getRandomNumber();
+	public void assignPetalValues() {
+ 		for(int i = 0; i < this.getPetals().length; i++) {
+ 			this.petals[i] = getRandomNumber();
  		}
 	}
 
-	public int [] getPedals() {
-		return pedals;
+	public int [] getPetals() {
+		return petals;
 	}
 	
 	private int getRandomNumber() {

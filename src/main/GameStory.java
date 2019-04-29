@@ -16,23 +16,15 @@ public GameStory(Player player) {
 	this.player = player;
 	rooms = new Room[10][10];
 	//Room 0 Game starts on this page. Kind of like a game lobby the central point.
-	rooms[0][0] = new Room("The doctor will see you now[0][0]",
+	rooms[0][0] = new Room("The doctor will see you now",
 	new Choice("Vist Dr. Office",1,0), //this is going to a new room [1][0]
 	new Choice("Explore Outside", 2,0),
 	new Choice ("Leave", 0,0));
 	
-//	rooms[0][1] = new Room("Welcome please take a seat.[0][1]",// internal choices should be a new action class that calls games and item.
-//			new Choice("playGame",new AnagramMiniGame(player.getmHealth())),
-//			new Choice("Go Back",0,0),
-//			new Choice ("Go Back", 0,0));
-//	
-//	rooms[0][2]= new Room("Outside[0][2]",// internal choices should be a new action class that calls games and item.
-//			new Choice("pickFlower",2,0),
-//			new Choice("Go Back",0,1),
-//			new Choice ("Leave", 0,0));
+
 	
-	rooms[1][0] = new Room("[1][0]Dr: Welcome " + player.getmName() + " please take a seat", 
-			new Choice ("sit", 1,1),
+	rooms[1][0] = new Room("Dr: Welcome " + player.getmName() + " please take a seat", 
+			new Choice ("Sit", 1,1),
 			new Choice ("How do you know my name?",1,2),
 			new Choice ("Leave", 0,0));
 	
@@ -157,7 +149,7 @@ public GameStory(Player player) {
 	//Room 1 scenarios end
 	
 	
-	rooms[2][0] = new Room("[2][0]Outside. "
+	rooms[2][0] = new Room("Outside. "
 			+ "\nWhat do you want to work on?", 
 			new Choice("Pick Flowers",new FlowerGame(player.getmHealth())),
 			new Choice("Go Back",0,0),
