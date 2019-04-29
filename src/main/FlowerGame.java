@@ -24,6 +24,19 @@ public class FlowerGame implements Games{
 	 	
 	 	public int startGame(int playerHealth) {
 	 		
+	 		Flower flower = new Flower();
+	 		flower.assignPedalValues();
+	 		int currentPedalValue = 0; 
+	 		for(int i = 0; i < flower.pedals.length;i++) {
+	 			currentPedalValue = flower.pedals[i];
+	 			System.out.println(currentPedalValue);
+	 		}
+	 		return playerHealth + currentPedalValue;
+	 		
+	 		
+	 		
 	 	}
+	 	
+	 	
 
 }

@@ -158,7 +158,7 @@ public GameStory(Player player) {
 	
 	rooms[2][0] = new Room("[2][0]Outside. "
 			+ "\nWhat do you want to work on?", 
-			new Choice("Pick Flowers",new AnagramMiniGame(player.getmHealth())),
+			new Choice("Pick Flowers",new FlowerGame(player.getmHealth())),
 			new Choice("Go Back",0,0),
 			new Choice ("Leave", 0,0));
 	
