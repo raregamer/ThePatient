@@ -54,6 +54,14 @@ public class AnagramMiniGame implements Games {
 		ArrayList<String> wordList = new ArrayList <String>();
 		wordList.add("Word");
 		wordList.add("Flower");
+		wordList.add("Help");
+		wordList.add("Doctor");
+		wordList.add("Mr. Belmonte");
+		wordList.add("Forever");
+		wordList.add("Canvas");
+		wordList.add("Xylophone");
+		wordList.add("Quarantine");
+		wordList.add("Illusion");
 		
 		int randomIndex = (int) (Math.random() * wordList.size());
 		
