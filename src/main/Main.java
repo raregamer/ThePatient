@@ -1,8 +1,16 @@
 package main;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
-//Updated 4.16.18
+//Samuel Elbaz 
+//CSN CIT 130
+//A story adventure game. 
 
 public class Main {
 	public static Scanner input = new Scanner(System.in); 
@@ -19,13 +27,21 @@ public class Main {
 	//Menu the first thing shown when the game is launched. 
 	public static void menu() {
 		//options to start a new game and load game. 
-		System.out.println("The Patient\n");
+		System.out.println("The Patient by Samuel Elbaz\n");
 		System.out.println("Main Menu");
 		System.out.println("1. New Game");
 		System.out.println("2. Load Game");
 		
 		//get user input of what they want to do. 
-		int menuChoice = input.nextInt();
+		int menuChoice = 0;
+			try {
+			 menuChoice = input.nextInt();
+			} catch (Exception  e){
+				System.out.println("Not a valid choice");
+				input.next();
+				
+			
+		}
 		clearScannerLine();
 		
 		switch(menuChoice) {
@@ -81,6 +97,7 @@ public class Main {
 //		int currentRoomNumber = goToRoom;
 		
 		if(player1.mHealth < 20) {
+			System.out.println("You've been sent to the Psychiatric Ward");
 			System.out.println("Game Over");
 			menu();
 			
@@ -104,24 +121,34 @@ public class Main {
 		statPrinter(player1);
 
 		
-		//print room scenario text.
-		printLn(currentRoom.getTextScenario() + "\n" );
 		
 		//get the choices applicable for that room. 
 		Choice choice1 = currentRoom.getChoice1();
 		Choice choice2 = currentRoom.getChoice2();
 		Choice choice3 = currentRoom.getChoice3();
 		
-		
-		//then print choices for that scenario in that room.
-		printLn("1. " + choice1.getChoiceText());
-		printLn("2. " + choice2.getChoiceText());
-		printLn("3. " + choice3.getChoiceText());
 
 		
 		//Make a scanner to get user inputed choices and load new scenario/room/action based on that choice. 
 		Scanner s = new Scanner(System.in);
-		int choiceSelection = s.nextInt();
+		int choiceSelection = 0;
+			while(choiceSelection > 5 || choiceSelection <= 0) {
+			try {
+				//print room scenario text.
+				printLn(currentRoom.getTextScenario() + "\n" );
+				
+				//then print choices for that scenario in that room.
+				printLn("1. " + choice1.getChoiceText());
+				printLn("2. " + choice2.getChoiceText());
+				printLn("3. " + choice3.getChoiceText());
+				printLn("4. Save Game");
+				choiceSelection = s.nextInt();
+				
+			} catch (Exception e) {
+				System.out.println("Not a valid selection");
+				s.next();
+			}
+		}
 		switch(choiceSelection) {
 		
 		//Case 1 only loads new rooms (i.e. [0][0],[1,0],[2,0]. 
@@ -174,7 +201,10 @@ public class Main {
 				loadRoom(player1,choice3.getNextRoomPage(), choice3.getSubRoomPage());
 				 
 				break;
-	
+				
+			case 4: 
+				saveGame(player);
+				loadRoom(player, 0,0);
 		
 		}
 		
@@ -192,6 +222,37 @@ public class Main {
 	
 	private static void loadGame() {
 		// TODO Auto-generated method stub
+		//Load player
+		//Load Game
+		System.out.println("loading");
+		try {
+			ObjectInputStream is = new ObjectInputStream(new FileInputStream("MyGame.ser")); 
+			Player restoredPlayer = (Player) is.readObject();
+			game = new GameStory(restoredPlayer);
+			loadRoom(restoredPlayer, 0,0);
+		}catch (Exception ex){
+			ex.printStackTrace();
+			
+		}
+		
+	}
+	
+	public static void saveGame(Player player) {
+		//Save player.
+		try {
+			FileOutputStream fileStream = new FileOutputStream("MyGame.ser");
+			ObjectOutputStream os = new ObjectOutputStream(fileStream);
+			os.writeObject(player);
+			os.close();
+			System.out.println("Game Saved");
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		//Save current room. 
 		
 	}
 	

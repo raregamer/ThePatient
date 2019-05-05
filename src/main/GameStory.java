@@ -1,5 +1,6 @@
 package main;
 
+
 public class GameStory {
 	//holds the story in an array to go through
 //	private Room [][] rooms;
